@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	
+	<title>
+		shopping cart with javascript using local storage -- fullyworld web tutorials
+	</title>
+	<link rel="stylesheet" href="index.css"/>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script>
+		
+		function Delete(e){
+			let items = [];
+			JSON.parse(localStorage.getItem('items')).map(data=>{
+				if(data.id != e.parentElement.parentElement.children[0].textContent){
+					
+					items.push(data);
+
+				}
+			});
+			localStorage.setItem('items',JSON.stringify(items));
+			window.location.reload();
+		};
+	</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
+  <a class="navbar-brand" id="h1" href="#">Welcome to Hostiko, Providing Reliable Hosting Solutions</a>
+  <button class="navbar-toggler" type="button"  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item">
+        <a class="nav-link disabled" id="h2" href="#" tabindex="-1" aria-disabled="true">info@hostiko.com</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+     
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-e34c442" target="_blank">
+						<span class="elementor-screen-only"></span>
+						<i class="fab fa-facebook"></i>					</a>
+				</div>
+							<div class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-b614a88" target="_blank">
+						<span class="elementor-screen-only"></span>
+						<i class="fab fa-twitter"></i>					</a>
+				</div>
+							<div class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-repeater-item-086080e" target="_blank">
+						<span class="elementor-screen-only"><span>
+						<i class="fab fa-linkedin"></i>					</a>
+				</div>
+							<div class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-ed5de1d" target="_blank">
+						<span class="elementor-screen-only"></span>
+						<i class="fab fa-youtube"></i>					</a>
+				
+    </form>
+  </div>
+</nav>
+	<div class="main">
+		<header id="header" class="header">
+			<h1><img src="layout.png" /></h1>
+			<div class="iconShopping">
+				<p>0</p>
+				<i class="fa fa-shopping-cart " aria-hidden="true"></i>
+			</div>
+		</header><!-- /header -->
+		
+		
+		<div class="itemsBox">
+			<div class="item">
+				
+				<div class="itemInfo">
+					<h1 class="shared itemInfo">SHARED</h1>
+					<p>ONLY <span>$2.50/MONTH</span></p>
+					
+				<li class="elementor-icon-list-item">
+				<i aria-hidden="true" class="fas fa-check"></i>				
+				<span class="elementor-icon-list-text">1 Domains</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-check"></i>						</span>
+										<span class="elementor-icon-list-text">5 GB SSD Disk Space</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-check"></i>						</span>
+										<span class="elementor-icon-list-text">One Click Installs</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-check"></i>						</span>
+										<span class="elementor-icon-list-text">30GB  Bandwidth</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-check"></i>						</span>
+										<span class="elementor-icon-list-text">Free SSL Certificate </span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-check"></i>						</span>
+										<span class="elementor-icon-list-text">Free Dedicated IP</span></li>
+										<br>
+										
+					<h6 class="elementor-heading-title elementor-size-default itemInfo"><i class="fa fa-tags" aria-hidden="true"></i> NOW 75% OFF!</h6>
+					<br>
+					<a href="#" title="add to cart" id="button" class="attToCart">Add to cart</a>
+					
+					</div>
+					
+				</div>
+			
+			
+			<div class="item">
+				<div class="itemInfo">
+					<h1 class="shared itemInfo">RESELLER</h1>
+					<p>ONLY <span>$13.75/MONTH</span></p>
+					
+				<li class="elementor-icon-list-item">
+				<i aria-hidden="true" class="fas fa-check"></i>				
+				<span class="elementor-icon-list-text">Unlimited Domains</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-check"></i>						</span>
+										<span class="elementor-icon-list-text">60 GB Disk</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-check"></i>						</span>
+										<span class="elementor-icon-list-text">One Click Installs</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-check"></i>						</span>
+										<span class="elementor-icon-list-text">600 GB Bandwidth</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-check"></i>						</span>
+										<span class="elementor-icon-list-text">Free SSL Certificate </span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-check"></i>						</span>
+										<span class="elementor-icon-list-text">Free Dedicated IP</span></li>
+										<br>
+										
+					<h6 class="elementor-heading-title elementor-size-default itemInfo"><i class="fa fa-tags" aria-hidden="true"></i> NOW 39% OFF!</h6>
+					<br>
+					<a href="#" title="add to cart" id="button" class="attToCart">Add to cart</a>
+					
+				</div>
+				</div>
+			
+			
+			<div class="item">
+				
+				<div class="itemInfo">
+					<h1 class="shared itemInfo">VPS</h1>
+					<p>ONLY <span>$19.45/MONTH</span></p>
+					
+				<li class="elementor-icon-list-item">
+				<i aria-hidden="true" class="fas fa-check"></i>				
+				<span class="elementor-icon-list-text">Plesk Web Admin</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-check"></i>						</span>
+										<span class="elementor-icon-list-text">120 GB Disk Space</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-check"></i>						</span>
+										<span class="elementor-icon-list-text">2 GB RAM</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-check"></i>						</span>
+										<span class="elementor-icon-list-text">1.5 TB Bandwidth</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-check"></i>						</span>
+										<span class="elementor-icon-list-text">2 Cores CPU</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-check"></i>						</span>
+										<span class="elementor-icon-list-text">Free Dedicated IP</span></li>
+										<br>
+										
+					<h6 class="elementor-heading-title elementor-size-default itemInfo"><i class="fa fa-tags" aria-hidden="true"></i> NOW 60% OFF!</h6>
+					<br>
+					<a href="#" title="add to cart" id="button" class="attToCart">Add to cart</a>
+					</div>
+					</div>
+				
+		
+	</div>
+	<div class="cartBox">
+		<div class="cart">
+			<i class="fa fa-close"></i>
+			<h1 class="h1"><img src="icon.png" width="40px" /> Cart</h1>
+			<div class="card-panel shopping-cart">*All items added to the shopping cart will appear here.</div>
+			<br>
+			<table></table>
+		</div>
+	</div>
+
+
+	<!-- script -->
+	<script src="index.js"></script>
+</body>
+</html>
